@@ -15,3 +15,5 @@ node_modules/
 
 # typscript lib
 typings/
+
+package-lock.json
