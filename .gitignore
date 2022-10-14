@@ -17,3 +17,6 @@ node_modules/
 typings/
 
 package-lock.json
+
+# npm
+miniprogram/miniprogram_npm/
