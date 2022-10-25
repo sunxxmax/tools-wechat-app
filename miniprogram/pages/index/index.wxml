@@ -1,25 +1,14 @@
 <!--index.wxml-->
-<view class="container">
-    <t-button t-class="external-class" theme="primary" block>强按钮</t-button>
 
-    <view class="userinfo">
-        <block wx:if="{{canIUseOpenData}}">
-            <view class="userinfo-avatar" bindtap="bindViewTap">
-                <open-data type="userAvatarUrl"></open-data>
-            </view>
-            <open-data type="userNickName"></open-data>
-        </block>
-        <block wx:elif="{{!hasUserInfo}}">
-            <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
-            <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-            <view wx:else> 请使用1.4.4及以上版本基础库 </view>
-        </block>
-        <block wx:else>
-            <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-            <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-        </block>
+<view>
+    <view class="notice">
+        <t-notice-bar visible="{{visible}}" marquee="{{marquee}}" content="提示文字描述提示文字描述提示文字描述提示文字描述文" />
     </view>
-    <view class="usermotto">
-        <text class="user-motto">{{motto}}</text>
+    <view class="swiper-box">
+        <t-swiper current="{{1}}" autoplay="{{autoplay}}" duration="{{duration}}" interval="{{interval}}" navigation="{{navigation}}" direction="vertical" paginationPosition="{{paginationPosition}}" height="{{400}}">
+            <t-swiper-item wx:for="{{swiperList}}" wx:key="index">
+                <image src="{{item.image}}" class="img" mode="aspectFill" />
+            </t-swiper-item>
+        </t-swiper>
     </view>
 </view>

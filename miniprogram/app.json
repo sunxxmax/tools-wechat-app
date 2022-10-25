@@ -1,14 +1,41 @@
 {
-  "pages": [
-    "pages/index/index",
-    "pages/logs/logs"
-  ],
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle": "black"
-  },
-  "style": "v2",
-  "sitemapLocation": "sitemap.json"
+    "pages": [
+        "pages/index/index",
+        "pages/logs/logs",
+        "pages/user/user",
+        "pages/box/box",
+        "pages/uuid/uuid",
+        "pages/blood/blood",
+        "pages/bmi/bmi"
+    ],
+    "tabBar": {
+        "selectedColor": "#0052d9",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "./icon/paper.png",
+                "selectedIconPath": "./icon/paper-selected.png"
+            },
+            {
+                "pagePath": "pages/box/box",
+                "text": "功能",
+                "iconPath": "./icon/application.png",
+                "selectedIconPath": "./icon/application-selected.png"
+            },
+            {
+                "pagePath": "pages/user/user",
+                "text": "我的",
+                "iconPath": "./icon/account.png",
+                "selectedIconPath": "./icon/account-selected.png"
+            }
+        ]
+    },
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "Weixin",
+        "navigationBarTextStyle": "black"
+    },
+    "sitemapLocation": "sitemap.json"
 }

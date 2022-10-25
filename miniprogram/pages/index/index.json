@@ -1,5 +1,9 @@
 {
-  "usingComponents": {
-    "t-button": "tdesign-miniprogram/button/button"
-  }
+    "usingComponents": {
+        "t-notice-bar": "tdesign-miniprogram/notice-bar/notice-bar",
+        "t-swiper": "tdesign-miniprogram/swiper/swiper",
+        "t-swiper-item": "tdesign-miniprogram/swiper/swiper-item",
+        "t-switch": "tdesign-miniprogram/switch/switch",
+        "t-slider": "tdesign-miniprogram/slider/slider"
+    }
 }
