@@ -14,7 +14,7 @@ $RECYCLE.BIN/
 node_modules/
 
 # typscript lib
-typings/
+# typings/
 
 package-lock.json
 
