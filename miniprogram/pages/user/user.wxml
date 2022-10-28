@@ -1,2 +1,43 @@
 <!--pages/user/user.wxml-->
-<text>pages/user/user.wxml</text>
+<view class="main-user">
+    <!-- 头像 -->
+    <view class="user-container">
+        <block wx:if="{{!hasUserInfo}}">
+            <view style="display:flex;flex-direction:column;" bindtap="getUserProfile">
+                <image class="avatar-img no-login" src="{{defaultAvatarUrl}}" mode="cover"></image>
+
+                <view style="text-align: center;">
+                    <text>未登录</text>
+                </view>
+            </view>
+        </block>
+
+        <block wx:else>
+            <view style="display:flex;flex-direction:row;">
+
+                <image class="avatar-img" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+                <view style="display:flex;flex-direction:column;justify-content: space-around;">
+                    <text style="font-weight: bold;">{{userInfo.nickName}}</text>
+                    <text style="font-size: 26rpx;color: #AAAAAA;">解析次数：2/4</text>
+                </view>
+                <view class="refresh">
+                    <t-icon name="refresh" bindtap="getUserProfile" />
+                </view>
+            </view>
+        </block>
+    </view>
+
+    <!-- 功能 -->
+    <view class="function-container">
+        <t-cell title="获取次数" hover arrow note="增加解析次数">
+            <t-icon color="#73d13d" name="add-circle" slot="left-icon" />
+        </t-cell>
+        <t-cell title="常见问题" hover arrow>
+            <t-icon color="#36cfc9" name="help-circle" t-class="t-cell__left" slot="left-icon" />
+        </t-cell>
+        <t-cell title="联系客服" hover arrow>
+            <t-icon color="#40a9ff" name="service" slot="left-icon" />
+        </t-cell>
+    </view>
+
+</view>

@@ -1,19 +1,19 @@
 // pages/blood/blood.ts
 const bloodSwiperList = [
     {
-        image: `../../image/xue-01.png`,
+        image: `https://www.masily.top/file/20220101/xue-01.png`,
     },
     {
-        image: `../../image/xue-02.png`,
+        image: `https://www.masily.top/file/20220101/xue-02.png`,
     },
     {
-        image: `../../image/xue-03.png`,
+        image: `https://www.masily.top/file/20220101/xue-03.png`,
     },
     {
-        image: `../../image/xue-04.png`,
+        image: `https://www.masily.top/file/20220101/xue-04.png`,
     },
     {
-        image: `../../image/xue-05.png`,
+        image: `https://www.masily.top/file/20220101/xue-05.png`,
     }
 ];
 const bloodList = [

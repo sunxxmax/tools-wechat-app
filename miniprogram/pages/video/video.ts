@@ -1,16 +1,15 @@
-import Toast from 'tdesign-miniprogram/toast/index';
+import Toast from "tdesign-miniprogram/toast/index";
 
-// pages/box/box.ts
+// pages/video/video.ts
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        // border: {
-        //     color: '#f6f6f6',
-        //     style:'solid',
-        // },
+        url: '',
+        urlError: false,
+        disable: true
     },
 
     /**
@@ -68,12 +67,22 @@ Page({
     onShareAppMessage() {
 
     },
-    more() {
-        Toast({
-            context: this,
-            selector: '#t-toast',
-            message: '更多功能开发中',
-            icon: 'check-circle',
-        });
+    parse() {
+        if (!this.data.url) {
+            Toast({
+                context: this,
+                selector: '#t-toast',
+                message: '请提供有效的链接！',
+                icon: 'check-circle',
+            });
+        }
     },
+    onUrlInput(e: any) {
+        const isUrl = /^https?:\/\/.+/.test(e.detail.value) && e.detail.value.length > 0;
+        this.setData({
+            urlError: !isUrl,
+            disable: !isUrl,
+            url: e.detail.value
+        });
+    }
 })

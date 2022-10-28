@@ -1,38 +1,34 @@
 // index.ts
-const imageCdn = 'https://tdesign.gtimg.com/site/swiper';
-
 const swiperList = [
     {
-      image: `${imageCdn}/01.png`,
+        image: `https://www.masily.top/file/20220101/01.webp`,
     },
     {
-      image: `${imageCdn}/02.png`,
+        image: `https://www.masily.top/file/20220101/02.webp`,
     },
     {
-      image: `${imageCdn}/03.png`,
+        image: `https://www.masily.top/file/20220101/03.webp`,
     },
     {
-      image: `${imageCdn}/04.png`,
-    },
-    {
-      image: `${imageCdn}/05.png`,
-    },
-  ];
+        image: `https://www.masily.top/file/20220101/04.webp`,
+    }
+];
 
 Page({
-  data: {
-    visible: true,
-    marquee: {
-      speed: 80,
-      loop: -1,
-      delay: 0,
-    },
-    current: 1,
-    autoplay: true,
-    duration: 500,
-    interval: 5000,
-    swiperList,
-    navigation: { type: 'dots-bar' },
-    paginationPosition: 'right',
-  }
+    data: {
+        content: "更多内容开发中，请敬请期待！",
+        visible: true,
+        marquee: {
+            speed: 40,
+            loop: -1,
+            delay: 0,
+        },
+        current: 1,
+        autoplay: true,
+        duration: 500,
+        interval: 5000,
+        swiperList,
+        navigation: { type: 'dots-bar' },
+        paginationPosition: 'right',
+    }
 })

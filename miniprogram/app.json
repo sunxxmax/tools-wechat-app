@@ -6,7 +6,8 @@
         "pages/box/box",
         "pages/uuid/uuid",
         "pages/blood/blood",
-        "pages/bmi/bmi"
+        "pages/bmi/bmi",
+        "pages/video/video"
     ],
     "tabBar": {
         "selectedColor": "#0052d9",
@@ -37,5 +38,6 @@
         "navigationBarTitleText": "Weixin",
         "navigationBarTextStyle": "black"
     },
-    "sitemapLocation": "sitemap.json"
+    "sitemapLocation": "sitemap.json",
+    "lazyCodeLoading": "requiredComponents"
 }

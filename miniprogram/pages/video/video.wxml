@@ -1,0 +1,11 @@
+<!--pages/video/video.wxml-->
+<view class="main-video">
+    <t-toast id="t-toast" />
+
+    <t-input placeholder="视频链接" value="{{url}}" clearable="true" focus="true" error-message="{{urlError ? '视频链接错误！' : ''}}" bindchange="onUrlInput" />
+
+    <view class="btn">
+        <t-button block theme="primary" bindtap="parse" disabled="{{disable}}">解析</t-button>
+    </view>
+
+</view>

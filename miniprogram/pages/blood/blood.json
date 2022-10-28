@@ -1,4 +1,5 @@
 {
+    "navigationBarTitleText": "血型计算",
     "usingComponents": {
         "t-icon": "tdesign-miniprogram/icon/icon",
         "t-picker": "tdesign-miniprogram/picker/picker",

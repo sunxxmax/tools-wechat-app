@@ -1,9 +1,10 @@
 <!--index.wxml-->
+<view class="main-index">
 
-<view>
     <view class="notice">
-        <t-notice-bar visible="{{visible}}" marquee="{{marquee}}" content="提示文字描述提示文字描述提示文字描述提示文字描述文" />
+        <t-notice-bar visible="{{visible}}" marquee="{{marquee}}" content="{{content}}" />
     </view>
+
     <view class="swiper-box">
         <t-swiper current="{{1}}" autoplay="{{autoplay}}" duration="{{duration}}" interval="{{interval}}" navigation="{{navigation}}" direction="vertical" paginationPosition="{{paginationPosition}}" height="{{400}}">
             <t-swiper-item wx:for="{{swiperList}}" wx:key="index">
