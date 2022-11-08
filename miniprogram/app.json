@@ -7,7 +7,12 @@
         "pages/uuid/uuid",
         "pages/blood/blood",
         "pages/bmi/bmi",
-        "pages/video/video"
+        "pages/video/video",
+        "pages/image/image",
+        "pages/base64/base64",
+        "pages/qrcode/qrcode",
+        "pages/barcode/barcode",
+        "pages/news/news"
     ],
     "tabBar": {
         "selectedColor": "#0052d9",

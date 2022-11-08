@@ -1,17 +1,18 @@
-// pages/uuid/uuid.ts
+// pages/base64/base64.ts
 import * as api from "../../api/api"
 import uri = require('../../api/uri')
 
 Page({
-
     /**
      * 页面的初始数据
      */
     data: {
-        btnDisabled: false,
-        count: 1,
-        uuids: []
+        inputValue: '',
+        checkedValue: 0,
+        base64: false,
+        result: ''
     },
+
     /**
      * 生命周期函数--监听页面加载
      */
@@ -67,37 +68,33 @@ Page({
     onShareAppMessage() {
 
     },
-    stepperChange(e: any) {
+    radioChange(e: any) {
         this.setData({
-            count: e.detail.value
+            base64: false,
+            result: '',
+            checkedValue: e.detail.value[0]
         })
     },
-    generate() {
-        wx.showLoading({ title: '加载中...', })
-        this.setData({ btnDisabled: true });
+    inputChange(e: any) {
+        const isEmpty = e.detail.value == 0;
+        this.setData({ inputError: isEmpty, inputValue: e.detail.value });
+    },
+    inputclear() {
+        this.setData({ inputValue: '' })
+    },
+    btn() {
+        wx.showLoading({ title: "loading" })
         api.post({
-            url: uri.uuid,
-            method: "POST",
+            url: uri.base64,
             header: { "Content-Type": "application/json" },
-            data: {
-                count: this.data.count,
-            },
+            data: { type: this.data.checkedValue, context: this.data.inputValue },
         }).then((res: any) => {
-            this.setData({
-                uuids: res.data,
-            })
+            this.setData({base64: true,result: res.data,})
         }).catch(error => {
-            console.error("异常：", error)
+            console.error("异常：", error);
             wx.showToast({ icon: 'error', title: "错误：" + error.code })
         }).finally(() => {
-            this.setData({ btnDisabled: false });
             wx.hideLoading();
-        })
-    },
-    onIconTap(e: any) {
-        var value = e.currentTarget.dataset
-        wx.setClipboardData({
-            data: value.item
-        })
+        });
     },
 })

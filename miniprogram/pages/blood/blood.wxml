@@ -1,28 +1,32 @@
 <!--pages/blood/blood.wxml-->
-<view class="swiper-box">
-    <t-swiper current="{{1}}" autoplay="{{autoplay}}" duration="{{duration}}" interval="{{interval}}" navigation="{{navigation}}" direction="vertical" paginationPosition="{{paginationPosition}}" height="{{400}}">
-        <t-swiper-item wx:for="{{bloodSwiperList}}" wx:key="index">
-            <image src="{{item.image}}" class="img" mode="aspectFill" />
-        </t-swiper-item>
-    </t-swiper>
-</view>
+<view class="main-blood">
 
-<block>
-    <view class="pannel-item" bindtap="onClickPicker" data-key="father">
-        <view class="pannel-label">爸爸血型</view>
-        <view class="pannel-text {{father.length?'':'empty'}}">{{father || '选择血型' }}</view>
-        <t-icon name="chevron-right" color="rgba(0, 0, 0, 0.26)" size="24px" />
+    <view class="swiper-box">
+        <t-swiper current="{{1}}" autoplay="{{autoplay}}" duration="{{duration}}" interval="{{interval}}" navigation="{{navigation}}" direction="vertical" paginationPosition="{{paginationPosition}}" height="{{400}}">
+            <t-swiper-item wx:for="{{bloodSwiperList}}" wx:key="index">
+                <image src="{{item.image}}" class="img" mode="aspectFill" />
+            </t-swiper-item>
+        </t-swiper>
     </view>
-    <view class="pannel-item" bindtap="onClickPicker" data-key="mother">
-        <view class="pannel-label">妈妈血型</view>
-        <view class="pannel-text {{mother.length?'':'empty'}}">{{mother || '选择血型' }}</view>
-        <t-icon name="chevron-right" color="rgba(0, 0, 0, 0.26)" size="24px" />
+
+    <view class="pannel">
+        <view class="pannel-item" bindtap="onClickPicker" data-key="father">
+            <view class="pannel-label">爸爸血型</view>
+            <view class="pannel-text {{father.length?'':'empty'}}">{{father || '选择血型' }}</view>
+            <t-icon name="chevron-right" color="rgba(0, 0, 0, 0.26)" size="24px" />
+        </view>
+        <view class="pannel-item" bindtap="onClickPicker" data-key="mother">
+            <view class="pannel-label">妈妈血型</view>
+            <view class="pannel-text {{mother.length?'':'empty'}}">{{mother || '选择血型' }}</view>
+            <t-icon name="chevron-right" color="rgba(0, 0, 0, 0.26)" size="24px" />
+        </view>
+        <view class="pannel-item">
+            <view class="pannel-label">宝宝血型</view>
+            <view class="pannel-text {{mother.length?'':'empty'}}">{{baby || '暂无数据' }}</view>
+        </view>
     </view>
-    <view class="pannel-item">
-        <view class="pannel-label">宝宝血型</view>
-        <view class="pannel-text {{mother.length?'':'empty'}}">{{baby || '暂无数据' }}</view>
-    </view>
-</block>
+
+</view>
 
 <!-- 城市不带标题 -->
 <t-picker visible="{{fatherVisible}}" value="{{father}}" data-key="father" title="血型" cancelBtn="取消" confirmBtn="确认" bindchange="onPickerChange" bindpick="onColumnChange" bindcancel="onPickerCancel">

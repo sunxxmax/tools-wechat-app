@@ -1,0 +1,9 @@
+<!--pages/qrcode/qrcode.wxml-->
+<view class="main-qrcode">
+    <t-textarea label="二维码内容" placeholder="请输入相关内容" value="{{textValue}}" t-class-label="label" bindchange="textareChange" />
+    <t-button t-class="btn" theme="primary" block disabled="{{btnDisabled}}" bindtap="btn">生成二维码</t-button>
+
+    <view wx:if="{{qrcode.success}}" class="image">
+        <t-image src="{{qrcode.image}}" mode="aspectFill" shape="round" show-menu-by-longpress="true"></t-image>
+    </view>
+</view>

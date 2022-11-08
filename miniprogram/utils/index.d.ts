@@ -1,7 +1,8 @@
 interface IAppOptionExt extends IAppOption {
     globalData: {
+        host: string,
         userInfo?: WechatMiniprogram.UserInfo,
-        is_login: false,
+        logined: boolean,
     }
     userInfoReadyCallback?: WechatMiniprogram.GetUserInfoSuccessCallback,
     tokenThirdValid?: boolean

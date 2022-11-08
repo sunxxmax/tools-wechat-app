@@ -1,0 +1,25 @@
+<!--pages/base64/base64.wxml-->
+<view class="main-base64">
+
+    <radio-group bindchange="radioChange" class="type-select">
+        <label style="display: flex;align-items: center;">
+            <view>
+                <radio value="0" checked="{{checkedValue==0}}" />
+            </view>
+            <view>编码</view>
+        </label>
+
+        <label style="display: flex;align-items: center;">
+            <view>
+                <radio value="1" checked="{{checkedValue==1}}" />
+            </view>
+            <view>解码</view>
+        </label>
+    </radio-group>
+
+    <t-input placeholder="请输入文字" value="{{inputValue}}" error-message="{{inputError?'提示信息':''}}" t-class="context" bindchange="inputChange" clearable bindclear="inputclear" />
+
+    <t-button theme="primary" block bindtap="btn" disabled="{{inputValue.length<=0}}">{{checkedValue==0?'编码':'解码'}}</t-button>
+
+    <t-textarea wx:if="{{base64}}" label="{{checkedValue==0?'编码':'解码'}}结果" value="{{result}}" disabled t-class="result"/>
+</view>

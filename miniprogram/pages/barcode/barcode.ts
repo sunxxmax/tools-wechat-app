@@ -1,4 +1,4 @@
-// pages/uuid/uuid.ts
+// pages/barcodee/barcodee.ts
 import * as api from "../../api/api"
 import uri = require('../../api/uri')
 
@@ -8,10 +8,14 @@ Page({
      * 页面的初始数据
      */
     data: {
-        btnDisabled: false,
-        count: 1,
-        uuids: []
+        textValue: '',
+        btnDisabled: true,
+        barcode: {
+            success: false,
+            image: ''
+        }
     },
+
     /**
      * 生命周期函数--监听页面加载
      */
@@ -67,37 +71,43 @@ Page({
     onShareAppMessage() {
 
     },
-    stepperChange(e: any) {
+    textareChange(e: any) {
         this.setData({
-            count: e.detail.value
+            textValue: e.detail.value,
+            btnDisabled: e.detail.value.length == 0,
+            barcode: Object.assign(this.data.barcode, { success: false })
         })
     },
-    generate() {
+    btn() {
         wx.showLoading({ title: '加载中...', })
         this.setData({ btnDisabled: true });
+
+        if (this.data.textValue.length <= 0) {
+            wx.hideLoading();
+            this.setData({ btnDisabled: false });
+            wx.showToast({ title: "内容不能为空" });
+            return
+        }
+
         api.post({
-            url: uri.uuid,
-            method: "POST",
+            url: uri.barcode,
             header: { "Content-Type": "application/json" },
             data: {
-                count: this.data.count,
+                context: this.data.textValue,
             },
         }).then((res: any) => {
             this.setData({
-                uuids: res.data,
+                barcode: {
+                    success: true,
+                    image: res.data
+                }
             })
         }).catch(error => {
-            console.error("异常：", error)
+            console.error("异常：", error);
             wx.showToast({ icon: 'error', title: "错误：" + error.code })
         }).finally(() => {
             this.setData({ btnDisabled: false });
             wx.hideLoading();
-        })
-    },
-    onIconTap(e: any) {
-        var value = e.currentTarget.dataset
-        wx.setClipboardData({
-            data: value.item
         })
     },
 })

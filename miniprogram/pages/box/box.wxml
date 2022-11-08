@@ -1,75 +1,75 @@
 <!--pages/box/box.wxml-->
+<t-toast id="t-toast" />
 <view class="main-box">
-    <t-toast id="t-toast" />
 
-    <t-grid external-classes="t-grid" border="{{border}}" column="{{4}}" hover>
+    <t-grid border="{{border}}" column="{{4}}" hover>
 
         <t-grid-item jump-type="navigate-to" url="/pages/video/video">
             <view slot="image">
-                <t-avatar shape="round" external-classes="t-class-icon" icon="image" />
+                <t-avatar shape="round" icon="video" />
             </view>
             <view slot="text" class="desc-text">去水印</view>
         </t-grid-item>
 
-        <t-grid-item>
+        <t-grid-item jump-type="navigate-to" url="/pages/image/image">
             <view slot="image">
-                <t-avatar shape="round" external-classes="t-class-icon" icon="image" />
+                <t-avatar shape="round" icon="image" />
             </view>
             <view slot="text" class="desc-text">九宫格</view>
         </t-grid-item>
 
         <t-grid-item jump-type="navigate-to" url="/pages/blood/blood">
             <view slot="image">
-                <t-avatar shape="round" external-classes="t-class-icon" icon="fork" />
+                <t-avatar shape="round" icon="fork" />
             </view>
-            <view slot="text" class="desc-text">血型计算</view>
+            <view slot="text" class="desc-text primary-content">血型计算</view>
         </t-grid-item>
 
         <t-grid-item jump-type="navigate-to" url="/pages/bmi/bmi">
             <view slot="image">
-                <t-avatar shape="round" external-classes="t-class-icon" icon="chart-bar" />
+                <t-avatar shape="round" icon="chart-bar" />
             </view>
             <view slot="text" class="desc-text">BMI 指数</view>
         </t-grid-item>
 
-        <t-grid-item>
+        <t-grid-item jump-type="navigate-to" url="/pages/qrcode/qrcode">
             <view slot="image">
-                <t-avatar shape="round" external-classes="t-class-icon" icon="qrcode" />
+                <t-avatar shape="round" icon="qrcode" />
             </view>
             <view slot="text" class="desc-text">二维码</view>
         </t-grid-item>
 
-        <t-grid-item>
+        <t-grid-item jump-type="navigate-to" url="/pages/barcode/barcode">
             <view slot="image">
-                <t-avatar shape="round" external-classes="t-class-icon" icon="barcode" />
+                <t-avatar shape="round" icon="barcode" />
             </view>
             <view slot="text" class="desc-text">条形码</view>
         </t-grid-item>
 
-        <t-grid-item>
+        <t-grid-item jump-type="navigate-to" url="/pages/base64/base64">
             <view slot="image">
-                <t-avatar shape="round" external-classes="t-class-icon" icon="code" />
+                <t-avatar shape="round" icon="code" />
             </view>
             <view slot="text" class="desc-text">Base64</view>
         </t-grid-item>
 
         <t-grid-item jump-type="navigate-to" url="/pages/uuid/uuid">
             <view slot="image">
-                <t-avatar shape="round" external-classes="t-class-icon" icon="round" />
+                <t-avatar shape="round" icon="round" />
             </view>
             <view slot="text" class="desc-text">UUID</view>
         </t-grid-item>
 
-        <t-grid-item jump-type="navigate-to" url="/pages/uuid/uuid">
+        <!-- <t-grid-item jump-type="navigate-to" url="/pages/news/news">
             <view slot="image">
-                <t-avatar shape="round" external-classes="t-class-icon" icon="time" />
+                <t-avatar shape="round" icon="time" />
             </view>
             <view slot="text" class="desc-text">每日新闻</view>
-        </t-grid-item>
+        </t-grid-item> -->
 
         <t-grid-item bindtap="more">
             <view slot="image">
-                <t-avatar shape="round" external-classes="t-class" icon="more" />
+                <t-avatar shape="round" icon="more" />
             </view>
             <view slot="text" class="desc-text">更多</view>
         </t-grid-item>

@@ -1,11 +1,34 @@
 <!--pages/video/video.wxml-->
 <view class="main-video">
-    <t-toast id="t-toast" />
+    <view class="app-list">
+        <view class="tips">
+            <text>暂且支持以下解析去水印</text>
+        </view>
+        <t-grid class="three-border" column="{{4}}">
+            <t-grid-item text="抖音" t-class-text="text" image="https://www.masily.top/file/20220201/douyin-512.png" />
+            <t-grid-item text="快手" t-class-text="text" image="https://www.masily.top/file/20220201/kuaishou-512.png" />
+            <t-grid-item text="西瓜" t-class-text="text" image="https://www.masily.top/file/20220201/xigua-512.png" />
+            <t-grid-item text="微视" t-class-text="text" image="https://www.masily.top/file/20220201/weishi-512.png" />
+            <t-grid-item text="头条" t-class-text="text" image="https://www.masily.top/file/20220201/toutiao-512.png" />
+            <t-grid-item text="火三" t-class-text="text" image="https://www.masily.top/file/20220201/huosan-512.png" />
+            <t-grid-item text="最右" t-class-text="text" image="https://www.masily.top/file/20220201/zuiyou-512.png" />
+            <t-grid-item text="皮皮虾" t-class-text="text" image="https://www.masily.top/file/20220201/pipixia-512.png" />
+        </t-grid>
+    </view>
 
-    <t-input placeholder="视频链接" value="{{url}}" clearable="true" focus="true" error-message="{{urlError ? '视频链接错误！' : ''}}" bindchange="onUrlInput" />
+    <t-input placeholder="视频链接" value="{{url}}" clearable="true" focus="true" error-message="{{urlError ? '视频链接错误！' : ''}}" bindchange="onUrlInput" bindclear="inputclear" />
 
     <view class="btn">
-        <t-button block theme="primary" bindtap="parse" disabled="{{disable}}">解析</t-button>
+        <t-button block theme="primary" bindtap="parse" disabled="{{btnDisabled}}">解析</t-button>
+    </view>
+
+    <view class="parse" wx:if="{{video.success}}">
+        <view class="title">{{video.title}}</view>
+
+        <view style="display: flex;justify-content: space-around;">
+            <t-button icon="cloud-download" variant="text" bindtap="download">下载视频</t-button>
+            <t-button icon="cloud-download" variant="text">复制链接</t-button>
+        </view>
     </view>
 
 </view>

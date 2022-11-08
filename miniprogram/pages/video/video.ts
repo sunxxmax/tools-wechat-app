@@ -1,15 +1,21 @@
-import Toast from "tdesign-miniprogram/toast/index";
-
 // pages/video/video.ts
-Page({
+import * as api from "../../api/api"
+import uri = require('../../api/uri')
 
+Page({
     /**
      * 页面的初始数据
      */
     data: {
         url: '',
         urlError: false,
-        disable: true
+        btnDisabled: true,
+        video: {
+            success: false,
+            title: '',
+            videoUrl: '',
+            musicUrl: '',
+        }
     },
 
     /**
@@ -67,22 +73,104 @@ Page({
     onShareAppMessage() {
 
     },
-    parse() {
-        if (!this.data.url) {
-            Toast({
-                context: this,
-                selector: '#t-toast',
-                message: '请提供有效的链接！',
-                icon: 'check-circle',
-            });
-        }
-    },
     onUrlInput(e: any) {
         const isUrl = /^https?:\/\/.+/.test(e.detail.value) && e.detail.value.length > 0;
         this.setData({
             urlError: !isUrl,
-            disable: !isUrl,
+            btnDisabled: !isUrl,
             url: e.detail.value
         });
+    },
+    parse() {
+        api.post({
+            url: uri.video,
+            method: "POST",
+            header: {
+                "Content-Type": "application/json"
+            },
+            data: {
+                link: this.data.url,
+            },
+        }).then((res: any) => {
+            this.setData({
+                video: { success: true, title: res.data.title, videoUrl: res.data.videoUrl, musicUrl: res.data.musicUrl }
+            })
+        }).catch(error => {
+            console.error("异常：", error);
+            wx.showToast({ icon: 'error', title: "错误：" + error.code })
+        }).finally(() => {
+            this.setData({ btnDisabled: false });
+            wx.hideLoading();
+        })
+    },
+    download() {
+        let url = this.data.video.videoUrl;
+        if (!url) {
+            wx.showToast({ title: "文件获取失" });
+            return;
+        }
+        const _this = this;
+        wx.showLoading({ title: '加载中...', })
+        wx.downloadFile({
+            url: url,
+            success(downres) {
+                _this.saveVideo(downres);
+            },
+            fail(res: any) {
+                wx.hideLoading();
+                console.log("下载失败" + res.errMsg)
+                wx.showToast({ title: "下载失败，请稍后再试！" });
+            }
+        })
+    },
+    saveVideo(downres: any) {
+        let _this = this;
+        console.log("开始保存")
+        // 保存图片到相册
+        wx.saveVideoToPhotosAlbum({
+            filePath: downres.tempFilePath,
+            success(res) {
+                wx.hideLoading()
+                wx.showToast({ title: "下载成功！" });
+            },
+            fail(err) {
+                console.log("保存失败！" + err.errMsg)
+                wx.hideLoading()
+                if (err.errMsg === "saveVideoToPhotosAlbum:fail:auth denied"
+                    || err.errMsg === "saveVideoToPhotosAlbum:fail auth deny"
+                    || err.errMsg === "saveVideoToPhotosAlbum:fail authorize no response") {
+                    // 这边微信做过调整，必须要在按钮中触发，因此需要在弹框回调中进行调用
+                    _this.showModal();
+                }
+            }
+        })
+    },
+    showModal() {
+        wx.showModal({
+            title: '提示',
+            content: '请授权保存到相册',
+            showCancel: false,
+            success() {
+                wx.openSetting({
+                    success(openres) {
+                        console.log("openres", openres)
+                        if (openres.authSetting['scope.writePhotosAlbum']) {
+                            console.log('获取权限成功，再次点击图片即可保存')
+                        } else {
+                            console.log('获取权限失败，无法保存到相册哦~')
+                        }
+                    },
+                    fail(failerr) {
+                        console.log("failerr", failerr)
+                    }
+                })
+            }
+        })
+    },
+    inputclear() {
+        this.setData({
+            btnDisabled: true,
+            video: Object.assign(this.data.video, { success: false })
+        })
     }
 })

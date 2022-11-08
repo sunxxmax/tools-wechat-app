@@ -29,6 +29,6 @@ Page({
         interval: 5000,
         swiperList,
         navigation: { type: 'dots-bar' },
-        paginationPosition: 'right',
+        paginationPosition: 'bottom',
     }
 })

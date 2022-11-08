@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "二维码",
+    "usingComponents": {
+        "t-textarea": "tdesign-miniprogram/textarea/textarea",
+        "t-button": "tdesign-miniprogram/button/button",
+        "t-image": "tdesign-miniprogram/image/image"
+
+    }
+}

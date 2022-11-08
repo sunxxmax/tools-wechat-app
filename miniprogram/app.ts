@@ -1,8 +1,9 @@
 // app.ts
 App<IAppOptionExt>({
     globalData: {
+        host: "http://localhost:8080/wechat",
         userInfo: undefined,
-        is_login: false
+        logined: false
     },
     onLaunch() {
         // 展示本地存储能力

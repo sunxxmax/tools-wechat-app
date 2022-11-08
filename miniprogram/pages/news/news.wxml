@@ -1,0 +1,6 @@
+<!--pages/news/news.wxml-->
+<view class="main-news">
+
+    <t-image t-class="image" src="{{image}}" mode="aspectFit" shape="round" show-menu-by-longpress="true"></t-image>
+
+</view>

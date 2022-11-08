@@ -1,0 +1,41 @@
+<!--pages/image/image.wxml-->
+<view class="main-image">
+    <t-tabs defaultValue="{{0}}" bind:change="onTabsChange" bind:click="onTabsClick">
+        <t-tab-panel label="一分多" value="0">
+            <view class="tab-content-0">
+
+                <view class="upload-img-0">
+                    <t-upload addContent="slot" mediaType="{{['image']}}" files="{{one.files}}" gridConfig="{{one.gridConfig}}" config="{count: 1,}" bind:success="handleSuccess" max="1" bind:remove="handleRemove">
+                        <t-icon slot="add-content" name="add" size="40rpx" color="rgba(0,0,0,0.26)" />
+                    </t-upload>
+                </view>
+
+                <view class="row-columns">
+                    <t-cell title="行">
+                        <t-stepper min="1" max="10" defaultValue="1" slot="right-icon" value="{{one.row}}" bindchange="rowChange" />
+                    </t-cell>
+                    <t-cell title="列">
+                        <t-stepper min="1" max="10" defaultValue="1" slot="right-icon" value="{{one.column}}" bindchange="columnChange" />
+                    </t-cell>
+                </view>
+
+                <view style="margin-top: 48rpx;">
+                    <t-button theme="primary" disabled="{{one.btnDisabledOne}}" block bindtap="btn">上传</t-button>
+                </view>
+
+                <view class="one-more-img" wx:if="{{one.result}}">
+                    <view style="width: 450rpx;height:450rpx;">
+                        <view class="grid" style="grid-template-rows: repeat({{one.rows}}, calc(100%/{{one.rows}}));grid-template-columns: repeat({{one.column}}, calc(100%/{{one.column}}));">
+                            <view class="grid-item" wx:for="{{one.images}}" wx:key="index" style="background-image: url({{item}});background-repeat: no-repeat;background-size: 100% 100%;" />
+                        </view>
+                    </view>
+                </view>
+                <view style="margin-top: 12rpx;text-align: center;" wx:if="{{one.result}}">
+                    <text style="color: #AAAAAA;" bindtap="download">长点击批量下载</text>
+                </view>
+            </view>
+
+        </t-tab-panel>
+        <!-- <t-tab-panel label="多合一" value="1"></t-tab-panel> -->
+    </t-tabs>
+</view>

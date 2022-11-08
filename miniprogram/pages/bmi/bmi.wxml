@@ -5,23 +5,25 @@
 正常 18.5≤BMI＜24.0
 消瘦 BMI<18.5 -->
 <!-- 体质指数适用于18～65岁的普通人，不适用于儿童、发育中的青少年、孕妇、乳母、老人及肌肉发达者。 -->
-<view>
-    <t-input label="身高" placeholder="0.00" suffix="cm" bindchange="onHeightInput" vlaue="{{height}}" error-message="{{heightError ? '请输入正确的身高' : ''}}" t-class-error-msg="error-msg" />
-    <t-input label="体重" placeholder="0.00" suffix="kg" bindchange="onWeightInput" vlaue="{{weight}}" error-message="{{weightError ? '请输入正确的体重' : ''}}" t-class-error-msg="error-msg" />
-    <view style="margin:24rpx 16rpx">
-        <t-button block theme="primary" bindtap="clac">计算</t-button>
-    </view>
-</view>
-<view style="margin:48rpx 16rpx 0 16rpx">
-    <view wx:if="{{bmi}}" style="text-align: center;">您的 BMI 指数为：{{bmi}}</view>
+<view class="main-bmi">
     <view>
-        <t-cell title="分类" note="BMI" />
-        <t-cell title="肥胖" t-class="{{level===4?'external-class':''}}" note="≥28.0" />
-        <t-cell title="超重" t-class="{{level===3?'external-class':''}}" note="24.0~28.0" />
-        <t-cell title="正常" t-class="{{level===2?'external-class':''}}" note="18.5~24.0" />
-        <t-cell title="消瘦" t-class="{{level===1?'external-class':''}}" note="<18.5" />
+        <t-input label="身高" placeholder="0.00" suffix="cm" bindchange="onHeightInput" vlaue="{{height}}" error-message="{{heightError ? '请输入正确的身高' : ''}}" t-class-error-msg="error-msg" />
+        <t-input label="体重" placeholder="0.00" suffix="kg" bindchange="onWeightInput" vlaue="{{weight}}" error-message="{{weightError ? '请输入正确的体重' : ''}}" t-class-error-msg="error-msg" />
+        <view style="margin-top: 48rpx;">
+            <t-button block theme="primary" bindtap="clac" disabled="{{btnDisabled}}">计算</t-button>
+        </view>
     </view>
-    <view style="margin-top: 16rpx;">
-        <text style="color: rgb(61, 60, 60);font-size: 26rpx;">体质指数适用于18～65岁的普通人，不适用于儿童、发育中的青少年、孕妇、乳母、老人及肌肉发达者。</text>
+    <view style="margin-top: 48rpx;">
+        <view wx:if="{{bmi}}" style="text-align: center;margin-bottom: 24rpx;color: #4D4D4D;">您的 BMI 指数为：{{bmi}}</view>
+        <view>
+            <t-cell title="分类" note="BMI" />
+            <t-cell title="肥胖" t-class="{{level===4?'external-class':''}}" note="≥28.0" />
+            <t-cell title="超重" t-class="{{level===3?'external-class':''}}" note="24.0~28.0" />
+            <t-cell title="正常" t-class="{{level===2?'external-class':''}}" note="18.5~24.0" />
+            <t-cell title="消瘦" t-class="{{level===1?'external-class':''}}" note="<18.5" />
+        </view>
+        <view style="margin-top: 16rpx;">
+            <text style="color: #AAAAAA;font-size: 26rpx;">体质指数适用于18～65岁的普通人，不适用于儿童、发育中的青少年、孕妇、乳母、老人及肌肉发达者。</text>
+        </view>
     </view>
 </view>

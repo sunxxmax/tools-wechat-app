@@ -1,10 +1,11 @@
-// pages/box/box.ts
+// pages/news/news.ts
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
+        image:'http://bjb.yunwj.top/php/tp/1.jpg'
     },
 
     /**
@@ -61,8 +62,5 @@ Page({
      */
     onShareAppMessage() {
 
-    },
-    more() {
-        wx.showToast({title:'更多功能开发中'})
-    },
+    }
 })

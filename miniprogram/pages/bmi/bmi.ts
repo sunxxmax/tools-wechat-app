@@ -9,6 +9,7 @@ Page({
         weight: 0.00,
         heightError: false,
         weightError: false,
+        btnDisabled: true,
         bmi: '',
         level: 0
     },
@@ -72,14 +73,16 @@ Page({
         const isNumber = /^\d+(\.\d+)?$/.test(e.detail.value) && e.detail.value > 0;
         this.setData({
             heightError: !isNumber,
-            height: e.detail.value
+            height: e.detail.value,
+            btnDisabled: !(isNumber && /^\d+(\.\d+)?$/.test(this.data.weight.toString()) && this.data.weight > 0)
         });
     },
     onWeightInput(e: any) {
         const isNumber = /^\d+(\.\d+)?$/.test(e.detail.value) && e.detail.value > 0;
         this.setData({
             weightError: !isNumber,
-            weight: e.detail.value
+            weight: e.detail.value,
+            btnDisabled: !(isNumber && /^\d+(\.\d+)?$/.test(this.data.height.toString()) && this.data.height > 0)
         });
     },
     clac() {

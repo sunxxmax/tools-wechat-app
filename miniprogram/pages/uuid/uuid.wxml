@@ -1,17 +1,17 @@
 <!--pages/uuid/uuid.wxml-->
-<view style="margin-top: 12rpx;">
+<view class="main-uuid">
     <t-cell title="生成个数">
-        <t-stepper defaultValue="1" slot="right-icon" min="1" />
+        <t-stepper defaultValue="1" slot="right-icon" min="1" value="{{count}}" bindchange="stepperChange"/>
     </t-cell>
-    <view style="margin:16rpx">
-        <t-button t-class="external-class" theme="primary" block bindtap="generate">生成</t-button>
+
+    <view class="btn">
+        <t-button theme="primary" block bindtap="generate" disabled="{{btnDisabled}}">生成</t-button>
     </view>
 
-    <t-divider>
-        <text slot="content">UUID</text>
-    </t-divider>
-
-    <view wx:for="{{array}}">
-        {{index}} {{item}}
+    <view class="result" wx:if="{{uuids.length!=0}}">
+        <view wx:for="{{uuids}}" wx:for-index="index" wx:key="index" wx:for-item="item" class="uuid-item" style="display: flex;">
+            <text class="line-limit-length">{{item}}</text>
+            <t-icon name="file-copy" t-class="copy" color="#10AEFF" bind:click="onIconTap" data-item="{{item}}"/>
+        </view>
     </view>
 </view>
