@@ -16,7 +16,7 @@ const swiperList = [
 
 Page({
     data: {
-        content: "更多内容开发中，请敬请期待！",
+        content: "🌈 更多内容开发中，请敬请期待！",
         visible: true,
         marquee: {
             speed: 40,

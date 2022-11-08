@@ -1,7 +1,5 @@
 <!--pages/box/box.wxml-->
-<t-toast id="t-toast" />
 <view class="main-box">
-
     <t-grid border="{{border}}" column="{{4}}" hover>
 
         <t-grid-item jump-type="navigate-to" url="/pages/video/video">
