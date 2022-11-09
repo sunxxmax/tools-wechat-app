@@ -89,12 +89,18 @@ Page({
             header: { "Content-Type": "application/json" },
             data: { type: this.data.checkedValue, context: this.data.inputValue },
         }).then((res: any) => {
-            this.setData({base64: true,result: res.data,})
+            this.setData({ base64: true, result: res.data, })
         }).catch(error => {
             console.error("异常：", error);
             wx.showToast({ icon: 'error', title: "错误：" + error.code })
         }).finally(() => {
             wx.hideLoading();
         });
+    },
+    onIconTap(e: any) {
+        var value = e.currentTarget.dataset
+        wx.setClipboardData({
+            data: value.item
+        })
     },
 })

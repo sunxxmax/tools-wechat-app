@@ -5,6 +5,6 @@
     <t-button t-class="btn" theme="primary" block disabled="{{btnDisabled}}" bindtap="btn">生成条形码</t-button>
 
     <view wx:if="{{barcode.success}}" class="image">
-        <t-image src="{{barcode.image}}" mode="aspectFill" shape="round" show-menu-by-longpress="true"></t-image>
+        <t-image src="{{barcode.image}}" mode="aspectFill" shape="round" show-menu-by-longpress="true" t-class="t-image-class"></t-image>
     </view>
 </view>

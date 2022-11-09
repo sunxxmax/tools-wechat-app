@@ -21,5 +21,10 @@
 
     <t-button theme="primary" block bindtap="btn" disabled="{{inputValue.length<=0}}">{{checkedValue==0?'编码':'解码'}}</t-button>
 
-    <t-textarea wx:if="{{base64}}" label="{{checkedValue==0?'编码':'解码'}}结果" value="{{result}}" disabled t-class="result"/>
+    <t-textarea wx:if="{{base64}}" value="{{result}}" disabled t-class="result">
+        <view slot="label" style="display: flex;justify-content: space-between;">
+            <view>{{checkedValue==0?'编码':'解码'}}结果</view>
+            <t-icon name="file-copy" bind:click="onIconTap" color="#10AEFF" bind:click="onIconTap" data-item="{{result}}"/>
+        </view>
+    </t-textarea>
 </view>

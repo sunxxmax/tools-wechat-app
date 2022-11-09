@@ -1,34 +1,35 @@
 /* pages/box/box.wxss */
-page{
+page {
     height: 100%;
 }
+
 .main-box {
-    margin-top: 24rpx;
-    margin-left: 16rpx;
-    margin-right: 16rpx;
-    margin-bottom: 24rpx;
-    background-color: white;
-    height: -webkit-fill-available;
+    //宫格背景颜色
+    --td-grid-bg-color: white;
+    // 宫格文本颜色
+    --td-grid-item-text-color: #4D4D4D;
+    // 开启点击反馈时宫格背景颜色
+    // --td-grid-item-hover-bg-color:#e6f7ff;	
+
+    // 头像背景颜色;
+    --td-avatar-bg-color: #f0f2f585;
+    // 头像内容（文字、图标）颜色;
+    --td-avatar-content-color: #597ef7;
+    // 组合头像边框颜色;
+    // --td-avatar-group-border-color:red;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
-.t-grid {
-    border-radius: 8rpx;
+.t-grid-class {
     padding-top: 48rpx;
-    padding-bottom: 48rpx;
 }
 
 .desc-text {
-    color: #4D4D4D;
     font-size: 0.7em;
-    margin-top: 0.4em;
 }
 
-.t-avatar__wrapper {
-    color: #4f85de !important;
-    background-color: #f0f2f585 !important;
+.avatar-round {
     border-radius: 8px !important;
-}
-
-.external-classes {
-    size: 96rpx;
 }

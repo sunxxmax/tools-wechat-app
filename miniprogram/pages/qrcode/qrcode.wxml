@@ -4,6 +4,6 @@
     <t-button t-class="btn" theme="primary" block disabled="{{btnDisabled}}" bindtap="btn">生成二维码</t-button>
 
     <view wx:if="{{qrcode.success}}" class="image">
-        <t-image src="{{qrcode.image}}" mode="aspectFill" shape="round" show-menu-by-longpress="true"></t-image>
+        <t-image src="{{qrcode.image}}" mode="aspectFill" shape="round" show-menu-by-longpress="true"  t-class="t-image-class"></t-image>
     </view>
 </view>
