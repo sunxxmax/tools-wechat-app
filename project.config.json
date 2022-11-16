@@ -6,17 +6,37 @@
     },
     "miniprogramRoot": "miniprogram/",
     "compileType": "miniprogram",
-    "projectname": "ts-less-demo",
+    "projectname": "tools-wechat-app",
     "setting": {
-        "useCompilerPlugins": [
-            "typescript",
-            "less"
-        ],
+        "urlCheck": true,
+        "es6": true,
+        "enhance": true,
+        "postcss": true,
+        "preloadBackgroundData": false,
+        "minified": true,
+        "newFeature": false,
+        "coverView": true,
+        "nodeModules": true,
+        "autoAudits": false,
+        "showShadowRootInWxmlPanel": true,
+        "scopeDataCheck": false,
+        "uglifyFileName": true,
+        "checkInvalidKey": true,
+        "checkSiteMap": true,
+        "uploadWithSourceMap": true,
+        "compileHotReLoad": true,
+        "lazyloadPlaceholderEnable": false,
+        "useMultiFrameRuntime": true,
+        "useApiHook": true,
+        "useApiHostProcess": true,
         "babelSetting": {
             "ignore": [],
             "disablePlugins": [],
             "outputPath": ""
         },
+        "enableEngineNative": false,
+        "useIsolateContext": false,
+        "userConfirmedBundleSwitch": false,
         "packNpmManually": true,
         "packNpmRelationList": [
             {
@@ -24,20 +44,23 @@
                 "miniprogramNpmDistDir": "./miniprogram/"
             }
         ],
-        "es6": true,
-        "enhance": true,
-        "minified": true,
-        "uglifyFileName": true,
-        "ignoreDevUnusedFiles": false
+        "minifyWXSS": true,
+        "disableUseStrict": false,
+        "minifyWXML": true,
+        "showES6CompileOption": false,
+        "useCompilerPlugins": [
+            "typescript",
+            "less"
+        ]
     },
     "simulatorType": "wechat",
     "simulatorPluginLibVersion": {},
-    "condition": {},
     "srcMiniprogramRoot": "miniprogram/",
     "appid": "wx88ada0b3e3978894",
     "libVersion": "2.27.0",
     "editorSetting": {
         "tabIndent": "insertSpaces",
         "tabSize": 4
-    }
+    },
+    "condition": {}
 }

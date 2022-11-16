@@ -203,6 +203,7 @@ Page({
                 wx.hideLoading();
             })
         }
+        wx.showLoading({title:'下载成功'})
     },
 
     saveImage(downres: any) {

@@ -3,6 +3,6 @@
     "projectname": "tools-wechat-app",
     "setting": {
         "compileHotReLoad": true,
-        "urlCheck": false
+        "urlCheck": true
     }
 }

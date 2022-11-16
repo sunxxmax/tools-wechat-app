@@ -3,66 +3,23 @@
     <view style="margin: 24rpx 16rpx 0 16rpx">
         <t-grid column="{{4}}" hover t-class="t-grid-class">
 
-            <t-grid-item jump-type="navigate-to" url="/pages/video/video" t-class-text="desc-text" text="去水印">
-                <view slot="image">
-                    <t-avatar shape="round" icon="video" t-class="avatar-round" />
-                </view>
-            </t-grid-item>
+            <t-grid-item icon="video" jump-type="navigate-to" url="/pages/video/video" t-class-text="desc-text" text="去水印" />
 
-            <t-grid-item jump-type="navigate-to" url="/pages/image/image" t-class-text="desc-text" text="九宫格">
-                <view slot="image">
-                    <t-avatar shape="round" icon="image" t-class="avatar-round" />
-                </view>
-            </t-grid-item>
+            <t-grid-item icon="image" jump-type="navigate-to" url="/pages/image/image" t-class-text="desc-text" text="九宫格" />
 
-            <t-grid-item jump-type="navigate-to" url="/pages/blood/blood" t-class-text="desc-text" text="血型计算">
-                <view slot="image">
-                    <t-avatar shape="round" icon="fork" t-class="avatar-round" />
-                </view>
-            </t-grid-item>
+            <t-grid-item icon="fork" jump-type="navigate-to" url="/pages/blood/blood" t-class-text="desc-text" text="血型计算" />
 
-            <t-grid-item jump-type="navigate-to" url="/pages/bmi/bmi" t-class-text="desc-text" text="BMI 指数">
-                <view slot="image">
-                    <t-avatar shape="round" icon="chart-bar" t-class="avatar-round" />
-                </view>
-            </t-grid-item>
+            <t-grid-item icon="chart-bar" jump-type="navigate-to" url="/pages/bmi/bmi" t-class-text="desc-text" text="BMI 指数" />
 
-            <t-grid-item jump-type="navigate-to" url="/pages/qrcode/qrcode" t-class-text="desc-text" text="二维码">
-                <view slot="image">
-                    <t-avatar shape="round" icon="qrcode" t-class="avatar-round" />
-                </view>
-            </t-grid-item>
+            <t-grid-item icon="qrcode" jump-type="navigate-to" url="/pages/qrcode/qrcode" t-class-text="desc-text" text="二维码" />
 
-            <t-grid-item jump-type="navigate-to" url="/pages/barcode/barcode" t-class-text="desc-text" text="条形码">
-                <view slot="image">
-                    <t-avatar shape="round" icon="barcode" t-class="avatar-round" />
-                </view>
-            </t-grid-item>
+            <t-grid-item icon="barcode" jump-type="navigate-to" url="/pages/barcode/barcode" t-class-text="desc-text" text="条形码" />
 
-            <t-grid-item jump-type="navigate-to" url="/pages/base64/base64" t-class-text="desc-text" text="Base64">
-                <view slot="image">
-                    <t-avatar shape="round" icon="code" t-class="avatar-round" />
-                </view>
-            </t-grid-item>
+            <t-grid-item icon="code" jump-type="navigate-to" url="/pages/base64/base64" t-class-text="desc-text" text="Base64" />
 
-            <t-grid-item jump-type="navigate-to" url="/pages/uuid/uuid" t-class-text="desc-text" text="UUID">
-                <view slot="image">
-                    <t-avatar shape="round" icon="round" t-class="avatar-round" />
-                </view>
-            </t-grid-item>
+            <t-grid-item icon="round" jump-type="navigate-to" url="/pages/uuid/uuid" t-class-text="desc-text" text="UUID" />
 
-            <!-- <t-grid-item jump-type="navigate-to" url="/pages/news/news">
-                <view slot="image">
-                    <t-avatar shape="round" icon="time" />
-                </view>
-                <view slot="text" class="desc-text">每日新闻</view>
-            </t-grid-item> -->
-
-            <t-grid-item bindtap="more" t-class-text="desc-text" text="更多">
-                <view slot="image">
-                    <t-avatar shape="round" icon="more" t-class="avatar-round" />
-                </view>
-            </t-grid-item>
+            <t-grid-item icon="more" bindtap="more" t-class-text="desc-text" text="更多" />
         </t-grid>
     </view>
 

@@ -31,7 +31,7 @@
                     </view>
                 </view>
                 <view style="margin-top: 12rpx;text-align: center;" wx:if="{{one.result}}">
-                    <text style="color: #AAAAAA;" bindtap="download">长点击批量下载</text>
+                    <text style="color: #AAAAAA;" bindtap="download">点击此处下载</text>
                 </view>
             </view>
 
