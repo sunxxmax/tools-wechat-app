@@ -12,7 +12,8 @@
         "pages/base64/base64",
         "pages/qrcode/qrcode",
         "pages/barcode/barcode",
-        "pages/news/news"
+        "pages/news/news",
+        "pages/login/login"
     ],
     "tabBar": {
         "selectedColor": "#0052d9",

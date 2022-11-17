@@ -3,10 +3,10 @@
     <view style="margin: 24rpx 16rpx 0 16rpx">
         <t-grid column="{{4}}" hover t-class="t-grid-class">
 
-            <t-grid-item jump-type="navigate-to" url="/pages/video/video" t-class-text="desc-text" text="去水印">
-                <view slot="image">
+            <t-grid-item jump-type="navigate-to" url="/pages/video/video" t-class-text="desc-text" text="去水印" icon="video" t-icon="t-icon-ex">
+                <!-- <view slot="image">
                     <t-avatar shape="round" icon="video" t-class="avatar-round" />
-                </view>
+                </view> -->
             </t-grid-item>
 
             <t-grid-item jump-type="navigate-to" url="/pages/image/image" t-class-text="desc-text" text="九宫格">

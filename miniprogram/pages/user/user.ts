@@ -1,5 +1,5 @@
 // pages/user/user.ts
-const defaultAvatarUrl = 'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0'
+import { defaultAvatarUrl } from '../../app'
 Page({
 
     /**
@@ -71,6 +71,9 @@ Page({
     },
     developing() {
         wx.showToast({ icon: 'none', title: '开发中···' })
+    },
+    toLogin() {
+        wx.navigateTo({ url: '/pages/login/login' })
     },
     getUserProfile() {
         // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
