@@ -32,12 +32,17 @@
         <t-cell title="获取次数" hover arrow note="增加解析次数" bindtap="developing">
             <t-icon color="#73d13d" name="add-circle" slot="left-icon" />
         </t-cell>
+
         <t-cell title="常见问题" hover arrow bindtap="developing">
-            <t-icon color="#36cfc9" name="help-circle" t-class="t-cell__left" slot="left-icon" />
+            <t-icon color="#36cfc9" name="help-circle" slot="left-icon" />
         </t-cell>
-        <t-cell title="联系客服" hover arrow bindtap="developing">
-            <t-icon color="#40a9ff" name="service" slot="left-icon" />
-        </t-cell>
+
+        <button open-type="contact">
+            <t-cell title="联系客服" hover arrow>
+                <t-icon color="#40a9ff" name="service" slot="left-icon" />
+            </t-cell>
+        </button>
+
     </view>
 
 </view>
