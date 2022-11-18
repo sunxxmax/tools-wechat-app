@@ -3,23 +3,23 @@
     <view style="margin: 24rpx 16rpx 0 16rpx">
         <t-grid column="{{4}}" hover t-class="t-grid-class">
 
-            <t-grid-item icon="video" jump-type="navigate-to" url="/pages/video/video" t-class-text="desc-text" text="去水印" />
+            <t-grid-item style="color: #2f54eb;" icon="video" jump-type="navigate-to" url="/pages/video/video" t-class-text="desc-text" text="去水印" />
 
-            <t-grid-item icon="image" jump-type="navigate-to" url="/pages/image/image" t-class-text="desc-text" text="九宫格" />
+            <t-grid-item style="color: #f5222d;" icon="image" jump-type="navigate-to" url="/pages/image/image" t-class-text="desc-text" text="九宫格" />
 
-            <t-grid-item icon="fork" jump-type="navigate-to" url="/pages/blood/blood" t-class-text="desc-text" text="血型计算" />
+            <t-grid-item style="color: #722ed1;" icon="fork" jump-type="navigate-to" url="/pages/blood/blood" t-class-text="desc-text" text="血型计算" />
 
-            <t-grid-item icon="chart-bar" jump-type="navigate-to" url="/pages/bmi/bmi" t-class-text="desc-text" text="BMI 指数" />
+            <t-grid-item style="color: #a0d911;" icon="chart-bar" jump-type="navigate-to" url="/pages/bmi/bmi" t-class-text="desc-text" text="BMI 指数" />
 
-            <t-grid-item icon="qrcode" jump-type="navigate-to" url="/pages/qrcode/qrcode" t-class-text="desc-text" text="二维码" />
+            <t-grid-item style="color: #13c2c2;" icon="qrcode" jump-type="navigate-to" url="/pages/qrcode/qrcode" t-class-text="desc-text" text="二维码" />
 
-            <t-grid-item icon="barcode" jump-type="navigate-to" url="/pages/barcode/barcode" t-class-text="desc-text" text="条形码" />
+            <t-grid-item style="color: #faad14;" icon="barcode" jump-type="navigate-to" url="/pages/barcode/barcode" t-class-text="desc-text" text="条形码" />
 
-            <t-grid-item icon="code" jump-type="navigate-to" url="/pages/base64/base64" t-class-text="desc-text" text="Base64" />
+            <t-grid-item style="color: #eb2f96;" icon="code" jump-type="navigate-to" url="/pages/base64/base64" t-class-text="desc-text" text="Base64" />
 
-            <t-grid-item icon="round" jump-type="navigate-to" url="/pages/uuid/uuid" t-class-text="desc-text" text="UUID" />
+            <t-grid-item style="color: #fa541c;" icon="round" jump-type="navigate-to" url="/pages/uuid/uuid" t-class-text="desc-text" text="UUID" />
 
-            <t-grid-item icon="more" bindtap="more" t-class-text="desc-text" text="更多" />
+            <t-grid-item style="color: #262626;" icon="more" bindtap="more" t-class-text="desc-text" text="更多" />
         </t-grid>
     </view>
 

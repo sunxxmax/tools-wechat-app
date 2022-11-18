@@ -20,7 +20,7 @@
                     <text style="font-size: 26rpx;color: #AAAAAA;">解析次数：2/4</text>
                 </view>
                 <view class="refresh">
-                    <t-icon name="refresh" bindtap="getUserProfile" />
+                    <t-icon name="refresh" bindtap="toLogin" />
                 </view>
             </view>
         </block>

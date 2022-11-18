@@ -10,6 +10,7 @@ Page({
         nickname: '',
         avatarUrl: defaultAvatarUrl,
         theme: wx.getSystemInfoSync().theme,
+        btnDisabled: true
     },
 
     /**
@@ -73,8 +74,23 @@ Page({
     },
     onChooseAvatar(e: any) {
         const { avatarUrl } = e.detail
-        this.setData({
-            avatarUrl,
+        this.setData({ avatarUrl, })
+    },
+    inputChange(e: any) {
+        let btnShow = e.detail.value && e.detail.value.length > 0;
+        this.setData({ nickname: e.detail.value, btnDisabled: !btnShow })
+    },
+    btn() {
+        wx.setStorageSync('userInfo', {
+            avatarUrl: this.data.avatarUrl,
+            nickName: this.data.nickname
         })
+        wx.switchTab({
+            url: "/pages/user/user", success: (res: any) => {
+                var page = getCurrentPages().pop();
+                if (page == undefined || page == null) return;
+                page.onLoad();
+            }
+        });
     }
 })

@@ -16,3 +16,26 @@
     width: 100%;
     height: 100%;
 }
+
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+}
+
+@keyframes caret {
+    50% {
+        border-right-color: #000;
+    }
+}
+
+.desc {
+    font-size: 22px;
+    width: 0em;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 5s steps(15), //执行typing动画，在5s内执行完毕，分15段执行
+        caret .5s steps(1) infinite; //执行typing动画，在0.5s内执行完毕，分1段执行，循环执行
+    border-right: 1px solid transparent;
+}

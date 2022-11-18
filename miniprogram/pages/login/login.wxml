@@ -6,10 +6,14 @@
         </button>
     </view>
 
-    <t-input value="{{nickname}}" label="昵称" placeholder="请输入文字" type="nickname" />
+    <view style="margin-top: 24rpx;">
+        <t-input value="{{nickname}}" label="slot" placeholder="请输入文字" type="nickname" bindchange="inputChange">
+            <text slot="label">昵称<text style="color: #e34d59"> *</text></text>
+        </t-input>
+    </view>
 
     <view style="margin-top: 48rpx;">
-        <t-button block="true">确认</t-button>
+        <t-button block="true" theme="primary" bindtap="btn" disabled="{{btnDisabled}}">确认</t-button>
     </view>
 
 </view>
