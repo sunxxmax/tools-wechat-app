@@ -1,7 +1,7 @@
 <!--pages/uuid/uuid.wxml-->
 <view class="main-uuid">
     <t-cell title="生成个数">
-        <t-stepper defaultValue="1" slot="right-icon" min="1" value="{{count}}" bindchange="stepperChange"/>
+        <t-stepper defaultValue="1" slot="right-icon" min="1" max="10" value="{{count}}" bindchange="stepperChange"/>
     </t-cell>
 
     <view class="btn">
