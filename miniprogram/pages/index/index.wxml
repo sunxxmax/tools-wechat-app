@@ -6,11 +6,61 @@
     </view>
 
     <view class="swiper-box">
-        <t-swiper autoplay="{{autoplay}}" duration="{{duration}}" interval="{{interval}}" navigation="{{navigation}}" paginationPosition="{{paginationPosition}}" height="{{400}}">
+        <t-swiper autoplay="{{autoplay}}" duration="{{duration}}" interval="{{interval}}" navigation="{{navigation}}" paginationPosition="{{paginationPosition}}" height="{{360}}">
             <t-swiper-item wx:for="{{swiperList}}" wx:key="index">
                 <image src="{{item.image}}" class="img" mode="aspectFill" />
             </t-swiper-item>
         </t-swiper>
+    </view>
+
+    <view style="margin-top: 24rpx;">
+        <view class="card">
+            <t-divider>
+                <text slot="content">{{date.day}} 日剩余</text>
+            </t-divider>
+            <view style="display: flex;">
+                <view style="flex-grow: 1;">{{date.dayText}}</view>
+                <view style="flex-grow: 2;">
+                    <t-progress percentage="{{date.dayPercentage}}"></t-progress>
+                </view>
+            </view>
+        </view>
+
+        <view class="card">
+            <t-divider>
+                <text slot="content">{{date.week}} 周剩余</text>
+            </t-divider>
+            <view style="display: flex;">
+                <view style="flex-grow: 1;">{{date.weekText}}</view>
+                <view style="flex-grow: 2;">
+                    <t-progress percentage="{{date.weekPercentage}}"></t-progress>
+                </view>
+            </view>
+        </view>
+
+        <view class="card">
+            <t-divider>
+                <text slot="content">{{date.month}} 月剩余</text>
+            </t-divider>
+            <view style="display: flex;">
+                <view style="flex-grow: 1;">{{date.monthText}}</view>
+                <view style="flex-grow: 2;">
+                    <t-progress percentage="{{date.monthPercentage}}"></t-progress>
+                </view>
+            </view>
+        </view>
+
+        <view class="card">
+            <t-divider>
+                <text slot="content">{{date.year}} 年剩余</text>
+            </t-divider>
+            <view style="display: flex;">
+                <view style="flex-grow: 1;">{{date.yearText}}</view>
+                <view style="flex-grow: 2;">
+                    <t-progress percentage="{{date.yearPercentage}}"></t-progress>
+                </view>
+            </view>
+        </view>
     </view>
 
 </view>
