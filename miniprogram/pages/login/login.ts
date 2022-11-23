@@ -85,8 +85,10 @@ Page({
             avatarUrl: this.data.avatarUrl,
             nickName: this.data.nickname
         })
+        wx.setStorageSync('logined', true)
         wx.switchTab({
-            url: "/pages/user/user", success: (res: any) => {
+            url: "/pages/user/user",
+            success: (res: any) => {
                 var page = getCurrentPages().pop();
                 if (page == undefined || page == null) return;
                 page.onLoad();

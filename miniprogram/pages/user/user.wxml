@@ -17,7 +17,7 @@
                 <image class="avatar-img" src="{{userInfo.avatarUrl}}" mode="cover"></image>
                 <view style="display:flex;flex-direction:column;justify-content: space-around;">
                     <text style="font-weight: bold;color: #4D4D4D;">{{userInfo.nickName}}</text>
-                    <text style="font-size: 26rpx;color: #AAAAAA;">解析次数：2/4</text>
+                    <text style="font-size: 26rpx;color: #AAAAAA;">解析次数：{{parse.remainParse}}/{{parse.totalParse}}</text>
                 </view>
                 <view class="refresh">
                     <t-icon name="refresh" bindtap="toLogin" />

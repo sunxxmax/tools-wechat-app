@@ -5,7 +5,8 @@ export const qrcode = '/api/encode/qrcode';
 export const uuid = '/api/uuid';
 export const video = '/api/video';
 export const image = '/api/image/split';
+export const session = "/api/code/session"
 
 module.exports = {
-    login, barcode, base64, qrcode, uuid, video, image,
+    login, barcode, base64, qrcode, uuid, video, image, session
 }

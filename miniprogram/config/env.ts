@@ -8,7 +8,6 @@ let envs = {
         host: 'https://www.masily.top/wechat',
         imgHost: 'https://image.XXXXX.com/'
     },
-
 }
 
 export {

@@ -3,7 +3,7 @@
     "projectname": "tools-wechat-app",
     "setting": {
         "compileHotReLoad": true,
-        "urlCheck": true
+        "urlCheck": false
     },
     "libVersion": "2.27.2"
 }
