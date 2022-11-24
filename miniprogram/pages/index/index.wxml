@@ -13,51 +13,47 @@
         </t-swiper>
     </view>
 
+    <view style="background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);padding: 24rpx 0;margin-top: 24rpx;border-radius: 12rpx;">
+        <view style="display: flex;justify-content: center;font-weight: 900;margin-bottom: 24rpx;">{{time}}</view>
+        <view style="display: flex;justify-content: center;">
+            <t-count-down bindchange="countDownChange" content="default" t-class="time-cls" time="{{ countDown }}" splitWithUnit format="DD 日 HH 时 mm 分 ss 秒" size="middle" />
+        </view>
+
+    </view>
+
     <view style="margin-top: 24rpx;">
         <view class="card">
-            <t-divider>
-                <text slot="content">{{date.day}} 日剩余</text>
+            <t-divider align="left">
+                <text slot="content">{{date.day}} 日</text>
             </t-divider>
             <view style="display: flex;">
-                <view style="flex-grow: 1;">{{date.dayText}}</view>
-                <view style="flex-grow: 2;">
-                    <t-progress percentage="{{date.dayPercentage}}"></t-progress>
+                <view class="desc-text">{{date.dayText}}</view>
+                <view style="flex-grow: 1;margin-right: 12rpx;">
+                    <t-progress percentage="{{date.dayPercentage}}" color="{ from: '#000', to: '#000' }"></t-progress>
                 </view>
             </view>
         </view>
 
         <view class="card">
-            <t-divider>
-                <text slot="content">{{date.week}} 周剩余</text>
+            <t-divider align="left">
+                <text slot="content">{{date.month}} 月</text>
             </t-divider>
             <view style="display: flex;">
-                <view style="flex-grow: 1;">{{date.weekText}}</view>
-                <view style="flex-grow: 2;">
-                    <t-progress percentage="{{date.weekPercentage}}"></t-progress>
+                <view class="desc-text">{{date.monthText}}</view>
+                <view style="flex-grow: 1;margin-right: 12rpx;">
+                    <t-progress percentage="{{date.monthPercentage}}" color="{'0%': '#f00', '100%':'#0ff'}" t-class-label="label-bind" />
                 </view>
             </view>
         </view>
 
         <view class="card">
-            <t-divider>
-                <text slot="content">{{date.month}} 月剩余</text>
+            <t-divider align="left">
+                <text slot="content">{{date.year}} 年</text>
             </t-divider>
             <view style="display: flex;">
-                <view style="flex-grow: 1;">{{date.monthText}}</view>
-                <view style="flex-grow: 2;">
-                    <t-progress percentage="{{date.monthPercentage}}"></t-progress>
-                </view>
-            </view>
-        </view>
-
-        <view class="card">
-            <t-divider>
-                <text slot="content">{{date.year}} 年剩余</text>
-            </t-divider>
-            <view style="display: flex;">
-                <view style="flex-grow: 1;">{{date.yearText}}</view>
-                <view style="flex-grow: 2;">
-                    <t-progress percentage="{{date.yearPercentage}}"></t-progress>
+                <view class="desc-text">{{date.yearText}}</view>
+                <view style="flex-grow: 1;margin-right: 12rpx;">
+                    <t-progress percentage="{{date.yearPercentage}}" color="{ from: '#000', to: '#000' }"></t-progress>
                 </view>
             </view>
         </view>

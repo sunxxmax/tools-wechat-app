@@ -1,6 +1,6 @@
 <!--pages/box/box.wxml-->
 <view class="main-box">
-    <view style="margin: 24rpx 16rpx 0 16rpx">
+    <view style="margin: 24rpx 16rpx 0 16rpx;">
         <t-grid column="{{4}}" hover t-class="t-grid-class">
 
             <t-grid-item style="color: #2f54eb;" icon="video" jump-type="navigate-to" url="/pages/video/video" t-class-text="desc-text" text="去水印" />
